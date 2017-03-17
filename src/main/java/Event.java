@@ -28,9 +28,9 @@
     // }
 
     public int returnANumber(int numberOfGuests){
-        return 3;
+        return numberOfGuests;
     }
-    // 
+    //
     // public int calculateCost (int numberOfGuests ) {
     //
     //   return numberOfGuests;

@@ -9,7 +9,7 @@ public class EPPTest {
     Event theirEvent = new Event();
     int ourTestNumber=1;
 
-    assertEquals(ourTestNumber, theirEvent.returnANumber(2));
+    assertEquals(ourTestNumber, theirEvent.returnANumber(1));
   }
 
   // @Test
