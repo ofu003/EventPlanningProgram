@@ -32,8 +32,8 @@
     }
     //
     public int calculateCost (int numberOfGuests ) {
-
-      return numberOfGuests;
+      int bookingChargeBasedOnGuests= numberOfGuests*5;
+      return bookingChargeBasedOnGuests;
     }
 
   }

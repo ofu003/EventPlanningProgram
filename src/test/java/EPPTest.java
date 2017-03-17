@@ -14,8 +14,8 @@ public class EPPTest {
 
   @Test
   public void runCalculateCost_returnCost_0() {
-    int testCost=2;
+    int testCost=25;
     Event theirEvent = new Event();
-    assertEquals(testCost,theirEvent.calculateCost(3));
+    assertEquals(testCost,theirEvent.calculateCost(5));
   }
 }
