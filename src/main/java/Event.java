@@ -31,9 +31,9 @@
         return numberOfGuests;
     }
     //
-    // public int calculateCost (int numberOfGuests ) {
-    //
-    //   return numberOfGuests;
-    // }
+    public int calculateCost (int numberOfGuests ) {
+
+      return numberOfGuests;
+    }
 
   }

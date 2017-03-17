@@ -12,10 +12,10 @@ public class EPPTest {
     assertEquals(ourTestNumber, theirEvent.returnANumber(1));
   }
 
-  // @Test
-  // public void runCalculateCost_returnCost_0() {
-  //   int testCost=0;
-  //   Event testCostEvent= new Event();
-  //   assertEquals(testCost,testCostEvent.calculateCost(3));
-
+  @Test
+  public void runCalculateCost_returnCost_0() {
+    int testCost=2;
+    Event theirEvent = new Event();
+    assertEquals(testCost,theirEvent.calculateCost(3));
   }
+}
