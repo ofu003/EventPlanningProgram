@@ -12,8 +12,8 @@
 
 | Behavior |   Input   |   Output   |
 |----------|:---------:|:----------:|
-| Can return words | "bartender" | "bartender" |
-|Can assign a cost based on services|"magician"|"You included a magician for $500"|
+| Can return number of guests | 3 | 3 |
+|Can assign a cost based on number of guests |3| "3 guests will incur a booking charge of $20"|
 | Can accept coupon codes and calculate discounts | "weekday party promocode" | "you used the Weekday Party promotion code and your cost has been discounted 30% from $200 to $140" |
 | Can calculate final cost and display all details | "weekday party promocode","magician","valet parking" | "Your party services include a magician and valet parking. You used the Weekday Party promotion code and your cost has been discounted 30% from $1000 to $700" |
 

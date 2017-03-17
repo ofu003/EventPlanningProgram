@@ -5,10 +5,17 @@ public class EPPTest {
 
 
   @Test
-  public void runEvent_returnAWord_String() {
-    Event theirEvent = new Event(3, 2, "yes", "bartender", "band", "parking", "code1", "code2", 2);
-    assertEquals("yes", theirEvent.mMagician);
-    // contents of test will eventually go here.
-    System.out.println(theirEvent.mMagician);
+  public void runEvent_returnANumber_int() {
+    Event theirEvent = new Event();
+    int ourTestNumber=1;
+
+    assertEquals(ourTestNumber, theirEvent.returnANumber(2));
   }
-}
+
+  // @Test
+  // public void runCalculateCost_returnCost_0() {
+  //   int testCost=0;
+  //   Event testCostEvent= new Event();
+  //   assertEquals(testCost,testCostEvent.calculateCost(3));
+
+  }
