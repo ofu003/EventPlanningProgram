@@ -11,49 +11,67 @@
     public int mLevelOfFood;
 
 
-    constructor
-    public Event (int numberOfGuests, int hDFood, String magician, String bartender, String band, String valetParking, String couponCode1, String couponCode2, int levelOfFoodService  ){
-      mNumberOfGuests=numberOfGuests;
-      mHDFood=hDFood;
+    //constructor
+    public Event (int guests, int hors, String magician, String bartender, String band, String valet, int levelOfFood, String couponType  ){
+      mNumberOfGuests=guests;
+      mHDFood=hors;
       mMagician=magician;
       mBartender=bartender;
       mBand=band;
-      mValetParking=valetParking;
-      mCoupon1=couponCode1;
-      mCoupon2=couponCode2;
-      mLevelOfFood=levelOfFoodService;
+      mValetParking=valet;
+      mLevelOfFood=levelOfFood;
+      mCouponType=couponType;
     }
 
-
-    public Event (int guests ){
-      mNumberOfGuests = guests;
-    }
 
     public int returnANumber(int numberOfGuests){
         return numberOfGuests;
     }
-    //
-    public double calculateCost (int numberOfGuests ) {
-      double bookingChargeBasedOnGuests= numberOfGuests*5;
-      return bookingChargeBasedOnGuests;
+
+
+    public double calculateCost (int guests, int hors, String magician, String bartender, String band, String valet, int levelOfFood, String couponType ) {
+      Integer totalCost=0;
+      int magicianIncrement=0;
+      int bartenderIncrement=0;
+      int bandIncrement=0;
+      int valetIncrement=0;
+
+      int bookingCharge= guests*5;
+      int horsCharge= hors*15;
+      int  levelOfFoodCharge= levelOfFood * guests;
+      if (magician.equals("y")){
+        int magicianIncrement = 120;
+      }
+      else{}
+      if (bartender.equals("y")){
+        int bartenderIncrement=100;
+      }
+      else{}
+      if (band.equals("y")){
+        int bandIncrement=200;
+      }
+      else{}
+      if (valet.equals("y")){
+        int valetIncrement=50;
+      }
+      else{}
+      Integer totalCost=magicianIncrement+bartenderIncrement+bandIncrement+valetIncrement+bookingCharge+horsCharge+lelevelOfFoodCharge;
+
     }
 
-    // Coupon weekday = new Coupon ("weekday", .7);
-    // Coupon matinee = new Coupon ("matinee", .85);
-    //
-    // List<Coupon> CouponCodes = new ArrayList<Coupon>();
-    // CouponCodes.add(weekday);
-    // CouponCodes.add(matinee);
 
-    // if userinput = "matinee"
-    // double multiplier=0.85;
-    // applyCoupon(bookingChargeBasedOnGuests, multiplier)
-
-    //
-
-    public double applyCoupon(double bookingChargeBasedOnGuests, double multiplier){
-        double priceBasedOnCoupon = 0;
-        return priceBasedOnCoupon;
+    public double applyCoupon(Integer totalCost){
+      double costAfterCoupon=0;
+        if (couponType.equals("matinee")){
+          costAfterCoupon=totalCost*0.85;
+        }
+        else if (couponType.equals("weekday")){
+          costAfterCoupon=totalCost*0.7;
+        }
+        else {
+          costAfterCoupon=totalCost;
+        }
+        return costAfterCoupon;
     }
 
   }
