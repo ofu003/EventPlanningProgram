@@ -64,7 +64,8 @@ public class App {
     // Tell them the details
     System.out.println("These are your event details. Guests: " + printGuests + ". Hors d'oeuvres: " + printHD + ". Magician: " + printMagician + ". Bartender: " + printBartender + ". Band: " + printBand + ". Valet parking service: " + printValet + ". Amount spent on food per person: " + printLevel + ". Coupon: " + printCouponType + "." );
     // Retrieve and name cost
-    int printCost = theirParty.calculateCost();
+    theirParty.calculateCost();
+    int printCost = theirParty.getCost(); 
     //Tell them the cost
     System.out.println("That will be $" + printCost);
     System.out.println("That will be $" + printCost.toFixed([2]));
