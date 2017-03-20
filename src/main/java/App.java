@@ -16,7 +16,7 @@ public class App {
     System.out.println("Plese enter a numeral for the following question. How many platters of hors d'oeuvres will you need?");
     int hors=Integer.parseInt(consoleLine.readLine());
 
-    System.out.println("Type 'y' for yes and 'n' for no for the next 6 questions. Do you want a magician?");
+    System.out.println("Type 'yes' or 'no' for the next 6 questions. Do you want a magician?");
     String magician = consoleLine.readLine();
 
     System.out.println("Do you want a bartender?");
@@ -31,11 +31,11 @@ public class App {
     System.out.println("Enter a numeral. If you are providing a meal to your guests, how much are you willing to spend per person ?");
     int levelOfFood = Integer.parseInt(consoleLine.readLine());
 
-    System.out.println("Type 'y' or 'n.' Do you have a coupon promocode ?");
+    System.out.println("Type 'yes' or 'no.' Do you have a coupon promocode ?");
     String haveCoupon = consoleLine.readLine();
 
-    if (haveCoupon.equals "y"){
-        System.out.println("Do you have a the promocode 'matinee' or the promocode 'weekday'?");
+    if (haveCoupon.equals "yes"){
+        System.out.println("Do you have the promocode 'matinee' or the promocode 'weekday'?");
         String userAnswersCouponType = consoleLine.readLine();
         if(userAnswersCouponType="matinee"){
           String couponType="matinee";
@@ -45,30 +45,28 @@ public class App {
         }
     }
       else{
-      }
-    else{
-      couponType="none";
+      String couponType="none";
     }
 
-    //Call constructor
+    //Create theirParty object
     Event theirParty = new Event(guests, hors, magician, bartender, band, valet, levelOfFood, couponType);
 
+    // Retrieve and name details
+    String printGuests = theirParty.getNumberOfGuests();
+    String printHD = theirParty.getHDFood()
+    String printMagician = theirParty.getMagician()
+    String printBartender = theirParty.getBartender()
+    String printBand = theirParty.getBand()
+    String printValet = theirParty.getValet()
+    String printLevel = theirParty.getLevelOfFood()
+    String printCouponType = theirParty.getCouponType()
 
-
-
-    System.out.println(theirParty.mNumberOfGuests);
-    System.out.println(theirParty.mHDFood);
-    System.out.println(theirParty.mMagician);
-    System.out.println(theirParty.mBartender);
-    System.out.println(theirParty.mBand);
-    System.out.println(theirParty.mValetParking);
-    System.out.println(theirParty.mCoupon1);
-    System.out.println(theirParty.mCoupon2);
-    System.out.println(theirParty.mLevelOfFood);
-
-    double theirPartyBookingCharge = theirParty.calculateCost();
-
-
-    System.out.println(theirPartyBookingCharge);
+    // Tell them the details
+    System.out.println("These are your event details. Guests: " + printGuests + ". Hors d'oeuvres: " + printHD + ". Magician: " + printMagician + ". Bartender: " + printBartender + ". Band: " + printBand + ". Valet parking service: " + printValet + ". Amount spent on food per person: " + printLevel + ". Coupon: " + printCouponType + "." );
+    // Retrieve and name cost
+    int printCost = theirParty.calculateCost();
+    //Tell them the cost
+    System.out.println("That will be $" + printCost);
+    System.out.println("That will be $" + printCost.toFixed([2]));
   }
 }

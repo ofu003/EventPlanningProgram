@@ -1,17 +1,19 @@
  class Event {
+   // list attributes
+    private int mNumberOfGuests;
+    private int mHDFood;
+    private String mMagician;
+    private String mBartender;
+    private String mBand;
+    private String mValetParking;
+    private int mLevelOfFood;
+    private String mCouponType;
+    // Cost of Event, which will be calculated later
+    private int mCost;
 
-    public int mNumberOfGuests;
-    public int mHDFood;
-    public String mMagician;
-    public String mBartender;
-    public String mBand;
-    public String mValetParking;
-    public String mCoupon1;
-    public String mCoupon2;
-    public int mLevelOfFood;
 
 
-    //constructor
+    // Event constructor
     public Event (int guests, int hors, String magician, String bartender, String band, String valet, int levelOfFood, String couponType  ){
       mNumberOfGuests=guests;
       mHDFood=hors;
@@ -21,57 +23,87 @@
       mValetParking=valet;
       mLevelOfFood=levelOfFood;
       mCouponType=couponType;
+      // Will be calculated
+      mCost=0;
     }
 
-
-    public int returnANumber(int numberOfGuests){
-        return numberOfGuests;
+    // Getters
+    public int getNumberOfGuests(){
+        return mNumberOfGuests;
     }
 
-
-    public double calculateCost (int guests, int hors, String magician, String bartender, String band, String valet, int levelOfFood, String couponType ) {
-      Integer totalCost=0;
-      int magicianIncrement=0;
-      int bartenderIncrement=0;
-      int bandIncrement=0;
-      int valetIncrement=0;
-
-      int bookingCharge= guests*5;
-      int horsCharge= hors*15;
-      int  levelOfFoodCharge= levelOfFood * guests;
-      if (magician.equals("y")){
-        int magicianIncrement = 120;
-      }
-      else{}
-      if (bartender.equals("y")){
-        int bartenderIncrement=100;
-      }
-      else{}
-      if (band.equals("y")){
-        int bandIncrement=200;
-      }
-      else{}
-      if (valet.equals("y")){
-        int valetIncrement=50;
-      }
-      else{}
-      Integer totalCost=magicianIncrement+bartenderIncrement+bandIncrement+valetIncrement+bookingCharge+horsCharge+lelevelOfFoodCharge;
-
+    public int getHDFood(){
+      return mHDFood;
     }
 
-
-    public double applyCoupon(Integer totalCost){
-      double costAfterCoupon=0;
-        if (couponType.equals("matinee")){
-          costAfterCoupon=totalCost*0.85;
-        }
-        else if (couponType.equals("weekday")){
-          costAfterCoupon=totalCost*0.7;
-        }
-        else {
-          costAfterCoupon=totalCost;
-        }
-        return costAfterCoupon;
+    public String getMagician(){
+      return mMagician;
     }
 
+    public String getBartender(){
+      return mBartender;
+    }
+
+    public String getBand(){
+      return mBand;
+    }
+
+    public String getValet(){
+      return mValetParking;
+    }
+
+    public int getLevelOfFood(){
+      return mLevelOfFood;
+    }
+
+    public String getCouponType(){
+      return mCouponType;
+    }
+
+    public int getCost(){
+      return mCost;
+    }
+
+    // Calculates cost, returns int mCost
+    public int calculateCost (int guests, int hors, String magician, String bartender, String band, String valet, int levelOfFood, String couponType ) {
+      // Integer totalCost=0;
+      // int magicianIncrement=0;
+      // int bartenderIncrement=0;
+      // int bandIncrement=0;
+      // int valetIncrement=0;
+      mCost += mNumberOfGuests*5;
+
+      mCost += mHDFood*15;
+
+      mCost += mLevelOfFood * mGuests;
+
+      if (mMagician.equals("yes")){
+        mCost += 120;
+      }
+      else{}
+      if (mBartender.equals("yes")){
+        mCost += 100;
+      }
+      else{}
+      if (mBand.equals("yes")){
+        mCost +=200;
+      }
+      else{}
+      if (mValetParking.equals("yes")){
+        mCost += 50;
+      }
+      else{}
+
+      if (couponType.equals("matinee")){
+        mCost *= 0.85;
+      }
+      else if (couponType.equals("weekday")){
+        mCost *= 0.7;
+      }
+      else {
+        mCost = mCost;
+      }
+      return mCost;
+      //System.out.println(mCost);
+    }
   }
