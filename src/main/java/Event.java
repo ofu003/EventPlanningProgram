@@ -65,7 +65,8 @@
     }
 
     // Calculates cost, returns int mCost
-    public int calculateCost (int guests, int hors, String magician, String bartender, String band, String valet, int levelOfFood, String couponType ) {
+    // public int calculateCost(int guests, int hors, String magician, String bartender, String band, String valet, int levelOfFood, String couponType )
+    public int calculateCost() {
       // Integer totalCost=0;
       // int magicianIncrement=0;
       // int bartenderIncrement=0;
@@ -75,7 +76,7 @@
 
       mCost += mHDFood*15;
 
-      mCost += mLevelOfFood * mGuests;
+      mCost += mLevelOfFood*mNumberOfGuests;
 
       if (mMagician.equals("yes")){
         mCost += 120;

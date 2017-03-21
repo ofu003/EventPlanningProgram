@@ -3,6 +3,7 @@ import java.util.ArrayList;
 
 public class App {
   public static void main(String[] args) {
+    // String couponType;
     Console consoleLine = System.console();
 
     System.out.println("Welcome to the Private Event Room Reservation app . Answer the following questions and we'll try to bring your dream party or event to reality ___");
@@ -34,7 +35,8 @@ public class App {
     System.out.println("Type 'yes' or 'no.' Do you have a coupon promocode ?");
     String haveCoupon = consoleLine.readLine();
 
-    if (haveCoupon.equals "yes"){
+    if (haveCoupon.equals("yes")){
+      String couponType;
         System.out.println("Do you have the promocode 'matinee' or the promocode 'weekday'?");
         String userAnswersCouponType = consoleLine.readLine();
         if(userAnswersCouponType="matinee"){
@@ -44,30 +46,32 @@ public class App {
           String couponType="weekday";
         }
     }
-      else{
+      else if (!haveCoupon.equals("yes")){
       String couponType="none";
     }
+      else{
+      }
 
     //Create theirParty object
     Event theirParty = new Event(guests, hors, magician, bartender, band, valet, levelOfFood, couponType);
 
     // Retrieve and name details
-    String printGuests = theirParty.getNumberOfGuests();
-    String printHD = theirParty.getHDFood()
-    String printMagician = theirParty.getMagician()
-    String printBartender = theirParty.getBartender()
-    String printBand = theirParty.getBand()
-    String printValet = theirParty.getValet()
-    String printLevel = theirParty.getLevelOfFood()
-    String printCouponType = theirParty.getCouponType()
+    int printGuests = theirParty.getNumberOfGuests();
+    int printHD = theirParty.getHDFood();
+    String printMagician = theirParty.getMagician();
+    String printBartender = theirParty.getBartender();
+    String printBand = theirParty.getBand();
+    String printValet = theirParty.getValet();
+    int printLevel = theirParty.getLevelOfFood();
+    String printCouponType = theirParty.getCouponType();
 
     // Tell them the details
     System.out.println("These are your event details. Guests: " + printGuests + ". Hors d'oeuvres: " + printHD + ". Magician: " + printMagician + ". Bartender: " + printBartender + ". Band: " + printBand + ". Valet parking service: " + printValet + ". Amount spent on food per person: " + printLevel + ". Coupon: " + printCouponType + "." );
     // Retrieve and name cost
     theirParty.calculateCost();
-    int printCost = theirParty.getCost(); 
+    int printCost = theirParty.getCost();
     //Tell them the cost
     System.out.println("That will be $" + printCost);
-    System.out.println("That will be $" + printCost.toFixed([2]));
+    // System.out.println("That will be $" + printCost.toFixed([2]));
   }
 }
