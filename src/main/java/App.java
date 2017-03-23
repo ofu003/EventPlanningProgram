@@ -17,7 +17,7 @@ public class App {
     System.out.println("Plese enter a numeral for the following question. How many platters of hors d'oeuvres will you need?");
     int hors=Integer.parseInt(consoleLine.readLine());
 
-    System.out.println("Type 'yes' or 'no' for the next 6 questions. Do you want a magician?");
+    System.out.println("Type 'yes' or 'no' for the next 4 questions. Do you want a magician?");
     String magician = consoleLine.readLine();
 
     System.out.println("Do you want a bartender?");
@@ -32,25 +32,8 @@ public class App {
     System.out.println("Enter a numeral. If you are providing a meal to your guests, how much are you willing to spend per person ?");
     int levelOfFood = Integer.parseInt(consoleLine.readLine());
 
-    System.out.println("Type 'yes' or 'no.' Do you have a coupon promocode ?");
-    String haveCoupon = consoleLine.readLine();
-
-    if (haveCoupon.equals("yes")){
-      String couponType;
-        System.out.println("Do you have the promocode 'matinee' or the promocode 'weekday'?");
-        String userAnswersCouponType = consoleLine.readLine();
-        if(userAnswersCouponType="matinee"){
-          String couponType="matinee";
-        }
-        else{
-          String couponType="weekday";
-        }
-    }
-      else if (!haveCoupon.equals("yes")){
-      String couponType="none";
-    }
-      else{
-      }
+    System.out.println(" Do you have a coupon promocode ? Type 'matinee', 'weekday', or 'no.'");
+    String couponType = consoleLine.readLine();
 
     //Create theirParty object
     Event theirParty = new Event(guests, hors, magician, bartender, band, valet, levelOfFood, couponType);
@@ -72,6 +55,5 @@ public class App {
     int printCost = theirParty.getCost();
     //Tell them the cost
     System.out.println("That will be $" + printCost);
-    // System.out.println("That will be $" + printCost.toFixed([2]));
   }
 }

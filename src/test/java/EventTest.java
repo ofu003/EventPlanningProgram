@@ -2,7 +2,7 @@ import org.junit.*;
 import static org.junit.Assert.*;
 
 
-public class EPPTest {
+public class EventTest {
   @Test
   public void theirEventInstantiatesCorrectly(){
     Event theirEvent = new Event(4);
