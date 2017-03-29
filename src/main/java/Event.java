@@ -11,8 +11,6 @@ class Event {
   // Cost of Event, which will be calculated later
   private int mCost;
 
-
-
   // Event constructor
   public Event (int guests, int hors, String magician, String bartender, String band, String valet, int levelOfFood, String couponType  ){
     mNumberOfGuests=guests;
@@ -75,29 +73,29 @@ class Event {
     if (mMagician.equals("yes")){
       mCost += 120;
     }
-    else{}
+      else{}
     if (mBartender.equals("yes")){
       mCost += 100;
-    }
-    else{}
+      }
+      else{}
     if (mBand.equals("yes")){
       mCost +=200;
-    }
-    else{}
+      }
+      else{}
     if (mValetParking.equals("yes")){
       mCost += 50;
-    }
-    else{}
+      }
+      else{}
     if (mCouponType.equals("matinee")){
       mCost -= 20;
-    }
-    else if (mCouponType.equals("weekday")){
+      }
+      else if (mCouponType.equals("weekday")){
       mCost -= 40;
-    }
-    else {
-      mCost = mCost;
-    }
+      }
+        else {
+        mCost = mCost;
+        }
 
     return mCost;
+    }
   }
-}

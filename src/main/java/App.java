@@ -6,7 +6,7 @@ public class App {
     // String couponType;
     Console consoleLine = System.console();
 
-    System.out.println("Welcome to the Private Event Room Reservation app . Answer the following questions and we'll try to bring your dream party or event to reality ___");
+    System.out.println("Welcome to the Private Event Room Reservation app . Answer the following questions and we'll try to bring your dream party or event to reality -*-*-*-*-*-*-*--*-*-*");
 
     System.out.println("What is your name?");
     String theirName = consoleLine.readLine();
