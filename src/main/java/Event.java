@@ -89,10 +89,10 @@ class Event {
     }
     else{}
     if (mCouponType.equals("matinee")){
-      mCost *= 0.85;
+      mCost -= 20;
     }
     else if (mCouponType.equals("weekday")){
-      mCost *= 0.7;
+      mCost -= 40;
     }
     else {
       mCost = mCost;
