@@ -58,8 +58,8 @@ public class EventTest {
   }
 
   @Test
-  public void testEvent_getsCost_280(){
+  public void testEvent_calculateCost_280(){
     Event testEvent = new Event(10,2,"no","yes","no","yes",7,"matinee");
-    assertEquals(280, testEvent.getCost());
+    assertEquals(280, testEvent.calculateCost());
   }
 }

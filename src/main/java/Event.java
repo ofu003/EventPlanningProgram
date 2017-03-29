@@ -58,9 +58,7 @@ class Event {
     return mCouponType;
   }
 
-  public int getCost(){
-    return mCost;
-  }
+
 
   // Calculates cost, returns int mCost
   public int calculateCost() {
@@ -97,5 +95,9 @@ class Event {
         }
 
     return mCost;
+    }
+
+    public int getCost(){
+      return mCost;
     }
   }
